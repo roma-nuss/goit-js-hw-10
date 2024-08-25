@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -31,4 +35,47 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.back {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: #0b76a3;
+  color: #f6f6fe;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.back:hover {
+  opacity: 0.8;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 100px 0 100px 0;
+}
+
+.link {
+  display: block;
+  border-radius: 8px;
+  background-color: #0b76a3;
+  color: #fff;
+  border: none;
+  text-align: center;
+  padding: 15px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: 0.8;
 }
