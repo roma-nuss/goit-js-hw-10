@@ -1,11 +1,9 @@
-// Імпорт бібліотеки iziToast
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 document.querySelector('.form').addEventListener('submit', function (event) {
-  event.preventDefault(); // Запобігає стандартній поведінці форми
+  event.preventDefault();
 
-  // Отримання значень з форми
   const form = event.target;
   const delayInput = form.querySelector('input[name="delay"]');
   const stateRadios = form.querySelectorAll('input[name="state"]');
@@ -18,7 +16,6 @@ document.querySelector('.form').addEventListener('submit', function (event) {
     }
   });
 
-  // Створення промісу
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (state === 'fulfilled') {
@@ -29,7 +26,6 @@ document.querySelector('.form').addEventListener('submit', function (event) {
     }, delay);
   });
 
-  // Обробка промісу
   promise
     .then(delay => {
       iziToast.success({
@@ -46,7 +42,6 @@ document.querySelector('.form').addEventListener('submit', function (event) {
       });
     })
     .finally(() => {
-      // Очищення полів форми після обробки промісу
       delayInput.value = '';
       stateRadios.forEach(radio => (radio.checked = false));
     });
